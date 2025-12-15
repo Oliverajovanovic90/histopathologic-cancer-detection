@@ -1,0 +1,12 @@
+.git
+.gitignore
+__pycache__/
+*.ipynb
+data/
+notebooks/
+plots/
+*.zip
+*.csv
+.venv/
+.env
+requirements-train.txt
