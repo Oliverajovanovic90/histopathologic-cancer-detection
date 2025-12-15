@@ -142,7 +142,7 @@ Images normalized and flattened into vectors
 
 Approximately 27,648 features per image
 
-##### Results:
+#### Results:
 
 Accuracy: 0.585
 
@@ -157,7 +157,7 @@ Recall:    0.65
 F1-score:  0.61
 
 
-##### Conclusion:
+#### Conclusion:
 
 Performance slightly above random guessing
 
@@ -165,7 +165,7 @@ Limited ability to capture spatial image patterns
 
 Served strictly as a reference baseline
 
-## Random Forest Classifier
+### Random Forest Classifier
 
 Purpose:
 Random Forest was selected to model non-linear relationships while remaining interpretable and robust to noise.
@@ -178,7 +178,7 @@ No manual feature engineering
 
 Handles non-linear boundaries better than linear models
 
-### Results:
+#### Results:
 
 Accuracy: 0.715
 
@@ -199,7 +199,7 @@ Number of input features: 27,648
 
 Mean feature importance: 3.62e-05
 
-Conclusion:
+#### Conclusion:
 
 Significant improvement over Logistic Regression
 
@@ -207,7 +207,7 @@ Still constrained by flattened image representation
 
 Motivated transition to convolutional models
 
-## Convolutional Neural Networks (CNNs)
+### Convolutional Neural Networks (CNNs)
 
 CNNs were implemented to learn spatial features directly from image data, avoiding information loss caused by flattening.
 
@@ -223,7 +223,7 @@ Train / validation split
 
 Same image preprocessing pipeline
 
-## CNN Version 1 — Baseline CNN
+### CNN Version 1 — Baseline CNN
 
 Purpose:
 Establish a deep learning baseline using a simple convolutional architecture without regularization.
@@ -238,7 +238,7 @@ No dropout
 
 Minimal complexity
 
-### Training Results
+#### Training Results
 
 Epoch	Train Loss	Validation Accuracy
 1	17.87	0.50
@@ -247,7 +247,7 @@ Epoch	Train Loss	Validation Accuracy
 4	12.26	0.77
 5	10.85	0.75
 
-### Conclusion
+#### Conclusion
 
 Rapid learning during early epochs
 
@@ -257,7 +257,7 @@ Slight performance drop after peak, indicating mild overfitting
 
 Strong improvement over classical ML models
 
-## CNN Version 2 — Dropout Regularization
+### CNN Version 2 — Dropout Regularization
 
 Purpose:
 Evaluate whether dropout regularization improves generalization and reduces overfitting.
@@ -268,7 +268,7 @@ Dropout layers added
 
 Same base convolutional structure
 
-### Training Results:
+##### Training Results:
 
 Epoch	Train Loss	Validation Accuracy
 1	21.15	0.50
@@ -277,7 +277,7 @@ Epoch	Train Loss	Validation Accuracy
 4	16.61	0.51
 5	15.75	0.59
 
-### Conclusion:
+#### Conclusion:
 
 Slower convergence
 
@@ -287,7 +287,7 @@ Regularization was too strong for the dataset size
 
 Underperformed compared to baseline CNN
 
-## CNN Version 3 — Hyperparameter Tuning
+### CNN Version 3 — Hyperparameter Tuning
 
 Purpose:
 Improve model stability through controlled hyperparameter tuning.
@@ -300,7 +300,7 @@ Architectural refinement
 
 Improved training stability
 
-### Training Results:
+#### Training Results:
 
 Epoch	Train Loss	Validation Accuracy
 1	20.41	0.50
@@ -309,7 +309,7 @@ Epoch	Train Loss	Validation Accuracy
 4	16.27	0.58
 5	15.46	0.66
 
-### Conclusion:
+#### Conclusion:
 
 More stable than CNN v2
 
@@ -340,7 +340,7 @@ Simplest architecture among CNNs
 
 Best performance-to-complexity tradeoff
 
-##### Saved Model:
+#### Saved Model:
 
 model_cnn_v1.pth
 
