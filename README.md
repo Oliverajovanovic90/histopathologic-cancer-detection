@@ -4,27 +4,23 @@ End-to-End Deep Learning Pipeline with CNN Training, Evaluation, and Dockerized 
 
 ## 1. Project Overview
 
-This project implements a complete end-to-end machine learning pipeline for binary classification of histopathologic image patches into:
+This project delivers a complete, end-to-end machine learning solution for binary classification of histopathologic image patches, distinguishing between cancerous and non-cancerous tissue samples.
 
-Cancer
+The solution is built around a Convolutional Neural Network (CNN) implemented in PyTorch, specifically designed to learn spatial patterns from microscopic image data. The project follows a structured and reproducible ML workflow, covering the full lifecycle from raw data exploration to model inference.
 
-Non-Cancer
+Key components of the project include:
 
-Using a Convolutional Neural Network (CNN) built with PyTorch, the project covers:
+Exploratory data analysis and visualization to understand image characteristics and class balance
 
-Data exploration and visualization
+Iterative model development, including multiple CNN architectures and hyperparameter variations
 
-Multiple CNN model experiments
+Training and validation of models with systematic performance comparison
 
-Model training and validation
+Selection of a final, stable model based on validation accuracy and learning behavior
 
-Model version comparison
+Packaging of the trained model into a reusable inference pipeline
 
-Final model selection
-
-Deployment as a Dockerized REST API
-
-The final deliverable is a reproducible ML system that allows users to submit an image and receive a cancer prediction with a confidence score.
+The final outcome is a reproducible machine learning system capable of accepting a histopathologic image as input and returning a binary cancer prediction with an associated confidence score. The project demonstrates both strong technical execution and practical considerations required for deploying deep learning models in applied medical imaging contexts.
 
 ## 2. Problem Statement
 
@@ -41,27 +37,25 @@ Dataset: Histopathologic Cancer Detection (Kaggle)
 
 🔗 https://www.kaggle.com/competitions/histopathologic-cancer-detection
 
-The Histopathologic Cancer Detection dataset contains labeled histopathologic image patches derived from the PatchCamelyon (PCam) benchmark. The task is to classify image patches as cancerous or non-cancerous based on the presence of metastatic tissue.
+The dataset consists of histopathologic image patches used for binary classification of cancer presence at the tissue level. Each image represents a fixed-size patch extracted from larger whole-slide images commonly used in digital pathology workflows.
 
-Image Format: .tif
+Image Characteristics:
+
+File format: .tif (TIFF)
+
+Image type: RGB histopathologic image patches
+
+Patch size: Fixed-size image patches (consistent dimensions across the dataset)
 
 Labels:
+
+Each image is associated with a binary label indicating the presence of cancerous tissue:
 
 1 → Cancer
 
 0 → Non-Cancer
 
-Image Size: Fixed-size image patches
-
-Data Availability in Repository
-
-Due to GitHub storage limitations:
-
-Included:
-
-Label files (train_labels.csv, subset_labels.csv)
-
-Visualizations and plots
+Labels are provided in a CSV file mapping image identifiers to their corresponding class.
 
 ## 4. Project Structure
 histopathologic-cancer-detection/
