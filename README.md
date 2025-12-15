@@ -120,14 +120,14 @@ The need for convolutional feature extraction
 Suitability of CNN-based approach
 
 ## 6. Model Development & Training
-### Objective
+#### Objective
 
 The objective of the modeling phase was to evaluate multiple machine learning and deep learning approaches for binary classification of histopathologic images (cancer vs. non-cancer).
 Models were trained incrementally, starting from simple baselines and progressing toward convolutional neural networks, allowing performance and stability comparisons across model families.
 
 All models were trained and evaluated using a balanced subset of the dataset to ensure fair performance assessment.
 
-### Classical Machine Learning Models
+### Classical Machine Learning Models:
 
 Classical models were trained using flattened image pixel values to establish baseline performance before applying deep learning.
 
@@ -142,7 +142,7 @@ Images normalized and flattened into vectors
 
 Approximately 27,648 features per image
 
-### Results:
+##### Results:
 
 Accuracy: 0.585
 
@@ -157,7 +157,7 @@ Recall:    0.65
 F1-score:  0.61
 
 
-### Conclusion:
+##### Conclusion:
 
 Performance slightly above random guessing
 
