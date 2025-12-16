@@ -484,7 +484,7 @@ To prevent unnecessary cloud charges, all ECS tasks and related AWS resources we
 
 When deployed, the service exposes an HTTP endpoint similar to:
 
-POST http://<public-ip-or-load-balancer>:5000/predict
+##### POST http://<public-ip-or-load-balancer>:5000/predict
 
 
 Example request:
