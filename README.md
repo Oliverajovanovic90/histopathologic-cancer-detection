@@ -461,8 +461,44 @@ Example response:
   "confidence": 0.6432
 }
 
+## 12. Cloud Deployment (AWS)
 
-## 12. Conclusion
+To demonstrate production readiness, the trained model and inference API were prepared for deployment using AWS container services.
+
+A cloud-specific inference script and Docker configuration were created to isolate deployment concerns from local experimentation:
+
+predict_cloud.py
+Cloud-safe Flask inference service loading the final trained model (model_cnn_v1.pth) and exposing a /predict endpoint.
+
+Dockerfile.cloud
+Lightweight container configuration optimized for inference-only workloads.
+
+The Docker image was built locally and pushed to Amazon Elastic Container Registry (ECR). The service was then configured to run on Amazon Elastic Container Service (ECS) using a task definition with CPU-based execution and explicit port mapping (5000).
+
+The deployed service was successfully tested via HTTP requests against the live endpoint, returning class predictions and confidence scores consistent with local inference results.
+
+To prevent unnecessary cloud charges, all ECS tasks and related AWS resources were intentionally stopped after validation. The repository retains all deployment artifacts required to redeploy the service at any time.
+
+#### Example Inference Endpoint:
+
+When deployed, the service exposes an HTTP endpoint similar to:
+
+POST http://<public-ip-or-load-balancer>:5000/predict
+
+Example request:
+
+curl -X POST http://<endpoint>/predict \
+  -F "file=@sample_image.tif"
+
+Example response:
+
+{
+  "prediction": "non-cancer",
+  "confidence": 0.64
+}
+
+
+## 13. Conclusion
 
 This project demonstrates an end-to-end machine learning workflow for automated histopathologic image classification, with the goal of distinguishing cancerous from non-cancerous tissue samples using digitized microscopy images.
 
