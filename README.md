@@ -147,13 +147,19 @@ Approximately 27,648 features per image
 Accuracy: 0.585
 
 Class 0 (Non-Cancer):
+
 Precision: 0.60
+
 Recall:    0.52
+
 F1-score:  0.56
 
 Class 1 (Cancer):
+
 Precision: 0.58
+
 Recall:    0.65
+
 F1-score:  0.61
 
 
@@ -184,12 +190,16 @@ Accuracy: 0.715
 
 Class 0 (Non-Cancer):
 Precision: 0.69
+
 Recall:    0.77
+
 F1-score:  0.73
 
 Class 1 (Cancer):
 Precision: 0.74
+
 Recall:    0.66
+
 F1-score:  0.70
 
 
@@ -240,11 +250,16 @@ Minimal complexity
 
 #### Training Results
 
-Epoch	Train Loss	Validation Accuracy
+Epoch	Train Loss	Validation Accuracy:
+
 1	17.87	0.50
+
 2	16.26	0.62
+
 3	13.99	0.78
+
 4	12.26	0.77
+
 5	10.85	0.75
 
 #### Conclusion
@@ -270,11 +285,16 @@ Same base convolutional structure
 
 ##### Training Results:
 
-Epoch	Train Loss	Validation Accuracy
+Epoch	Train Loss	Validation Accuracy:
+
 1	21.15	0.50
+
 2	17.24	0.50
+
 3	17.04	0.57
+
 4	16.61	0.51
+
 5	15.75	0.59
 
 #### Conclusion:
@@ -302,11 +322,16 @@ Improved training stability
 
 #### Training Results:
 
-Epoch	Train Loss	Validation Accuracy
+Epoch	Train Loss	Validation Accuracy:
+
 1	20.41	0.50
+
 2	17.35	0.65
+
 3	17.18	0.51
+
 4	16.27	0.58
+
 5	15.46	0.66
 
 #### Conclusion:
@@ -317,16 +342,22 @@ Did not surpass CNN v1 peak performance
 
 Demonstrated diminishing returns from added complexity
 
-### Model Comparison Summary
+### Model Comparison Summary:
 Model	Validation Accuracy:
-Logistic Regression	0.585
-Random Forest	0.715
-CNN v1	0.780
-CNN v2 (Dropout)	0.590
-CNN v3 (Tuned)	0.660
-6.5 Final Model Selection
 
-#### Selected Model: CNN Version 1
+Logistic Regression	0.585
+
+Random Forest	0.715
+
+CNN v1	0.780
+
+CNN v2 (Dropout)	0.590
+
+CNN v3 (Tuned)	0.660
+
+#### Final Model Selection:
+
+Selected Model: CNN Version 1
 
 #### Justification:
 
@@ -346,15 +377,11 @@ model_cnn_v1.pth
 
 
 ## 7. Training Execution
-Option A: Notebook (Recommended for Review)
-Model_Training.ipynb
+Option A: Notebook (Model_Training.ipynb)
 
-Option B: Script-Based Training
-python train.py
-
+Option B: Script-Based Training (python train.py)
 
 Training-specific dependencies are listed in:
-
 requirements-train.txt
 
 ## 8. Inference Pipeline
@@ -362,6 +389,7 @@ requirements-train.txt
 A Flask-based REST API was built to serve the trained model.
 
 Endpoint
+
 POST /predict
 
 Input
@@ -370,25 +398,32 @@ Multipart form
 
 Image file (.tif, .png, .jpg)
 
-Output
+Output:
 {
   "prediction": "non-cancer",
+  
   "confidence": 0.6432
 }
 
 ## 9. Clone Repository
+
 git clone https://github.com/Oliverajovanovic90/histopathologic-cancer-detection.git
+
 cd histopathologic-cancer-detection
 
 ## 10. Run Locally (Without Docker)
-Create Virtual Environment
+Create Virtual Environment:
+
 python -m venv .venv
+
 source .venv/bin/activate
 
-Install Dependencies
+Install Dependencies:
+
 pip install -r requirements.txt
 
-Start API
+Start API:
+
 python predict.py
 
 
@@ -396,11 +431,13 @@ API runs at:
 
 http://localhost:5000
 
-## 11. Run with Docker (Recommended)
-Build Image
+## 11. Run with Docker
+Build Image:
+
 docker build -t cancer-detection-api .
 
-Run Container
+Run Container:
+
 docker run -p 5000:5000 cancer-detection-api
 
 ## Test the API
@@ -412,6 +449,7 @@ Example response:
 
 {
   "prediction": "non-cancer",
+  
   "confidence": 0.6432
 }
 
