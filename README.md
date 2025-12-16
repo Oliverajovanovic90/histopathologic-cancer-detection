@@ -57,7 +57,6 @@ Each image is associated with a binary label indicating the presence of cancerou
 
 Labels are provided in a CSV file mapping image identifiers to their corresponding class.
 
-```
 
 ## 4. Project Structure
 ```
@@ -97,9 +96,10 @@ histopathologic-cancer-detection/
 └── README.md
 ```
 
-```
 
 ## 5. Exploratory Data Analysis (EDA)
+
+```
 
 EDA was performed to understand data characteristics and guide model design.
 
