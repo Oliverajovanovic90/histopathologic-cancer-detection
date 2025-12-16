@@ -79,6 +79,7 @@ histopathologic-cancer-detection/
 │
 ├── eda.ipynb
 ├── Model_Training.ipynb
+├── predict_cloud.py
 │
 ├── train.py
 ├── predict.py
@@ -89,6 +90,7 @@ histopathologic-cancer-detection/
 ├── requirements-train.txt
 │
 ├── Dockerfile
+├── Dockerfile.cloud
 ├── .dockerignore
 ├── .gitignore
 ├── .gitattributes
@@ -468,9 +470,11 @@ To demonstrate production readiness, the trained model and inference API were pr
 A cloud-specific inference script and Docker configuration were created to isolate deployment concerns from local experimentation:
 
 predict_cloud.py
+
 Cloud-safe Flask inference service loading the final trained model (model_cnn_v1.pth) and exposing a /predict endpoint.
 
 Dockerfile.cloud
+
 Lightweight container configuration optimized for inference-only workloads.
 
 The Docker image was built locally and pushed to Amazon Elastic Container Registry (ECR). The service was then configured to run on Amazon Elastic Container Service (ECS) using a task definition with CPU-based execution and explicit port mapping (5000).
@@ -485,10 +489,12 @@ When deployed, the service exposes an HTTP endpoint similar to:
 
 POST http://<public-ip-or-load-balancer>:5000/predict
 
+
 Example request:
 
 curl -X POST http://<endpoint>/predict \
   -F "file=@sample_image.tif"
+
 
 Example response:
 
