@@ -170,7 +170,7 @@ Served strictly as a reference baseline
 Purpose:
 Random Forest was selected to model non-linear relationships while remaining interpretable and robust to noise.
 
-Model Characteristics
+Model Characteristics:
 
 Ensemble of decision trees
 
@@ -228,7 +228,7 @@ Same image preprocessing pipeline
 Purpose:
 Establish a deep learning baseline using a simple convolutional architecture without regularization.
 
-Architecture Characteristics
+Architecture Characteristics:
 
 Shallow CNN
 
@@ -318,7 +318,7 @@ Did not surpass CNN v1 peak performance
 Demonstrated diminishing returns from added complexity
 
 ### Model Comparison Summary
-Model	Validation Accuracy
+Model	Validation Accuracy:
 Logistic Regression	0.585
 Random Forest	0.715
 CNN v1	0.780
