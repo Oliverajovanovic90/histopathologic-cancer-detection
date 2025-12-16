@@ -57,7 +57,10 @@ Each image is associated with a binary label indicating the presence of cancerou
 
 Labels are provided in a CSV file mapping image identifiers to their corresponding class.
 
+```
+
 ## 4. Project Structure
+```
 histopathologic-cancer-detection/
 │
 ├── data/
@@ -92,6 +95,9 @@ histopathologic-cancer-detection/
 ├── .gitattributes
 │
 └── README.md
+```
+
+```
 
 ## 5. Exploratory Data Analysis (EDA)
 
@@ -118,8 +124,14 @@ Binary class imbalance considerations
 The need for convolutional feature extraction
 
 Suitability of CNN-based approach
+```
+
+```
 
 ## 6. Model Development & Training
+
+```
+
 #### Objective
 
 The objective of the modeling phase was to evaluate multiple machine learning and deep learning approaches for binary classification of histopathologic images (cancer vs. non-cancer).
@@ -161,7 +173,6 @@ Precision: 0.58
 Recall:    0.65
 
 F1-score:  0.61
-
 
 #### Conclusion:
 
@@ -375,15 +386,23 @@ Best performance-to-complexity tradeoff
 
 model_cnn_v1.pth
 
+```
+
+```
 
 ## 7. Training Execution
+
+```
+
 Option A: Notebook (Model_Training.ipynb)
 
 Option B: Script-Based Training (python train.py)
 
 Training-specific dependencies are listed in:
 requirements-train.txt
+```
 
+```
 ## 8. Inference Pipeline
 
 A Flask-based REST API was built to serve the trained model.
@@ -404,8 +423,13 @@ Output:
   
   "confidence": 0.6432
 }
+```
+
+```
 
 ## 9. Clone Repository
+
+```
 
 git clone https://github.com/Oliverajovanovic90/histopathologic-cancer-detection.git
 
@@ -453,7 +477,13 @@ Example response:
   "confidence": 0.6432
 }
 
+```
+
+```
+
 ## 12. Conclusion
+
+```
 
 This project demonstrates an end-to-end machine learning workflow for automated histopathologic image classification, with the goal of distinguishing cancerous from non-cancerous tissue samples using digitized microscopy images.
 
@@ -474,3 +504,5 @@ The final selected model achieved strong validation performance while maintainin
 Beyond model training, the project also emphasized operational readiness, ensuring the final model could be saved, reloaded, and used consistently for inference. This positions the solution for integration into downstream systems such as diagnostic pipelines, clinical decision support tools, or batch image screening workflows.
 
 Overall, this project delivers a robust and scalable foundation for automated histopathologic image classification. It demonstrates how disciplined data handling, incremental modeling, and evidence-based model selection can produce reliable results in applied machine learning settings. The approach and insights gained here can be extended to larger datasets, more advanced architectures, and real-time inference systems in medical imaging and beyond.
+
+```
