@@ -468,15 +468,9 @@ Example response:
 To demonstrate production readiness, the trained model and inference API were prepared for deployment using AWS container services.
 
 
-A cloud-specific inference script and Docker configuration were created to isolate deployment concerns from local experimentation:
+A cloud-specific inference script and Docker configuration were created to isolate deployment concerns from local experimentation: predict_cloud.py
 
-##### predict_cloud.py
-
-
-Cloud-safe Flask inference service loading the final trained model (model_cnn_v1.pth) and exposing a /predict endpoint:
-
-###### Dockerfile.cloud
-
+Cloud-safe Flask inference service loading the final trained model (model_cnn_v1.pth) and exposing a /predict endpoint:Dockerfile.cloud
 
 Lightweight container configuration optimized for inference-only workloads.
 
