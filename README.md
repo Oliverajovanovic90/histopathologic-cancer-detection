@@ -79,10 +79,10 @@ histopathologic-cancer-detection/
 │
 ├── eda.ipynb
 ├── Model_Training.ipynb
-├── predict_cloud.py
 │
 ├── train.py
 ├── predict.py
+├── predict_cloud.py
 │
 ├── model_cnn_v1.pth
 │
